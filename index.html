@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Invoice — Minimal</title>
+<title>Invoice</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
@@ -131,6 +131,24 @@
     .sheet{ width:200mm; margin:0 auto; padding:3mm 4mm 5mm; border:none; box-shadow:none; }
     body{ font-size:12.5px; }
   }
+
+/* ===== Mobile: make it edge-to-edge like Standard/Modern ===== */
+@media (max-width: 640px){
+  body{ background: var(--paper); }       /* removes grey gutter feel */
+  .sheet{
+    width:100vw;
+    max-width:100vw;
+    margin:0;                             /* no outer margin */
+    border:none;                          /* no border edge */
+    border-radius:0;                      /* no rounded corners */
+    box-shadow:none;                      /* no drop shadow */
+    padding:18px 14px 20px;               /* comfortable inner padding */
+  }
+  .meta{ grid-template-columns:1fr; }     /* stack columns */
+  .totals{ grid-template-columns:1fr; }   /* stack columns */
+}
+
+  
 </style>
 </head>
 <body>
