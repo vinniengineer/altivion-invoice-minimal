@@ -132,21 +132,18 @@
     body{ font-size:12.5px; }
   }
 
-/* ===== Mobile: make it edge-to-edge like Standard/Modern ===== */
-@media (max-width: 640px){
-  body{ background: var(--paper); }       /* removes grey gutter feel */
-  .sheet{
-    width:100vw;
-    max-width:100vw;
-    margin:0;                             /* no outer margin */
-    border:none;                          /* no border edge */
-    border-radius:0;                      /* no rounded corners */
-    box-shadow:none;                      /* no drop shadow */
-    padding:18px 14px 20px;               /* comfortable inner padding */
-  }
-  .meta{ grid-template-columns:1fr; }     /* stack columns */
-  .totals{ grid-template-columns:1fr; }   /* stack columns */
-}
+/* === Fix mobile width like Standard/Modern === */
+table{ width:100%; border-collapse:collapse; table-layout:fixed; }
+thead th, tbody td{ overflow:hidden; text-overflow:ellipsis; }
+
+thead th:nth-child(1){ width:130px; }  /* Date of Work */
+thead th:nth-child(3){ width:120px; }  /* Price / Hourly Rate */
+thead th:nth-child(4){ width:80px;  }  /* Cost Qty */
+thead th:nth-child(5){ width:140px; }  /* Cost Total */
+
+tbody td.desc-cell{ white-space:normal; word-break:break-word; }
+html, body{ -webkit-text-size-adjust:100%; }
+
 
   
 </style>
